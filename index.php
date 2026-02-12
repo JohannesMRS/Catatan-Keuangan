@@ -2,76 +2,129 @@
     require 'config/koneksi.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Finance Tracker</title>
-    <link rel="icon" type="image" href="img/favicon/favicon.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
-        *{
-            font-family: monospace;
-        }
-        .container-main{
-            background-color: #f0f0f0;
-            height: 702px;
+        :root {
+            --primary: #4361ee;
+            --secondary: #4cc9f0;
+            --accent: #34d399;
+            --dark: #0f172a;
+            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
 
-        .judul{
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
             text-align: center;
-            padding-top: 201px;
-            font-weight: bold;
+            max-width: 600px;
+            width: 90%;
+            transition: transform 0.3s ease;
         }
 
-        .judul2{
-            text-align: center;
-            padding-top: 40px;
+        .hero-card:hover {
+            transform: translateY(-5px);
         }
 
-        .button-klik{
-            text-align: center;
-            margin-top: 40px;
-            transition: all .3s ease;
-            background-color: red;
-            width: 120px;
-            margin: 0 auto;
-            margin-top: 40px;
-            border-radius: 5px;
+        .judul {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        button{
-            width: 120px;
-            height: 50px;
-
+        .judul span {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        button a{
-            font-size: 18px;
+        .judul2 {
+            color: #64748b;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .btn-modern {
+            background: var(--primary);
             color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
             text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
         }
 
-        .button-klik:hover{
-            transform: scale(1.1);
+        .btn-modern:hover {
+            background: #3651d1;
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(67, 97, 238, 0.4);
+            color: white;
+        }
+
+        /* Decorative Elements */
+        .circle {
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(67, 97, 238, 0.15);
+            top: -50px;
+            left: -50px;
+        }
+        .circle-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(52, 211, 153, 0.15);
+            bottom: -50px;
+            right: -100px;
         }
     </style>
-
-    
 </head>
 <body>
-    <div class = "container-main">
-    <h1 class="judul">Selamat Datang Di Personal Finance Tracker</h1>
-    <h2 class="judul2">Mari Lihat Keuanganku</h2>
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
 
-    <div class="button-klik">
-        <button type="button" class="btn btn-primary"><a href="keuangan.php">Let's Go</a></button>
+    <div class="hero-card">
+        <h1 class="judul">Kelola <span>Finansial</span> Jadi Lebih Mudah</h1>
+        <p class="judul2">Pantau setiap pengeluaran dan pemasukanmu dengan presisi. Saatnya kendalikan masa depan finansialmu sekarang.</p>
+
+        <a href="keuangan.php" class="btn-modern">Mulai Pantau</a>
     </div>
-    </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
