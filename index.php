@@ -59,7 +59,7 @@
         }
 
         .judul span {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, var(--accent), #024027);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -72,7 +72,7 @@
         }
 
         .btn-modern {
-            background: var(--primary);
+            background: #08e58d;
             color: white;
             padding: 14px 32px;
             border-radius: 12px;
@@ -85,7 +85,7 @@
         }
 
         .btn-modern:hover {
-            background: #3651d1;
+            background: #00965a;
             transform: scale(1.05);
             box-shadow: 0 15px 25px rgba(67, 97, 238, 0.4);
             color: white;
@@ -119,7 +119,7 @@
     <div class="circle circle-2"></div>
 
     <div class="hero-card">
-        <h1 class="judul">Kelola <span>Finansial</span> Jadi Lebih Mudah</h1>
+        <h1 class="judul"><span>Kelola Finansial</span> Jadi Lebih Mudah</h1>
         <p class="judul2">Pantau setiap pengeluaran dan pemasukanmu dengan presisi. Saatnya kendalikan masa depan finansialmu sekarang.</p>
 
         <a href="keuangan.php" class="btn-modern">Mulai Pantau</a>

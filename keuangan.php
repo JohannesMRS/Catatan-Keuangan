@@ -21,45 +21,35 @@
             padding: 4px;
             border-radius:4px ;
         }
+        #hapus, #edit{
+            transition: all .3s ease;
+        }
+        #hapus{
+            margin-left: 10px;
+        }
+
+        #hapus:hover{
+            background-color: #efe1e1;
+        }
+
+        #edit:hover{
+            background-color: #e2e9ee;
+        }
+
+        #btn-tambah{
+            transition: all .3s ease;
+        }
+
+        #btn-tambah:hover{
+            background-color: #364fc0;
+            transform: translateY(-3px);
+        }
+        
+
+        
     </style>
 </head>
 <body>
-    <div class="modal-overlay" id="modalTambah">
-    <div class="modal-content">
-        <h2 style="margin-bottom: 24px; font-size: 20px;">Tambah Transaksi</h2>
-        
-        <form action="proses/tambah.php" method="POST">
-            <div class="form-group">
-                <label>Tanggal</label>
-                <input type="date" name="tanggal" class="form-input" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Nominal (Rp)</label>
-                <input type="number" name="jumlah" class="form-input" placeholder="Contoh: 50000" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Jenis Transaksi</label>
-                <select name="jenis" class="form-input" required>
-                    <option value="">Pilih Jenis</option>
-                    <option value="Pemasukan">Pemasukan</option>
-                    <option value="Pengeluaran">Pengeluaran</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label>Deskripsi</label>
-                <textarea name="deskripsi" class="form-input" rows="3" placeholder="Makan siang, Gaji bulanan, dll"></textarea>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="btn-cancel" onclick="closeModal()">Batal</button>
-                <button type="submit" name="submit" class="btn-tambah">Simpan Transaksi</button>
-            </div>
-        </form>
-    </div>
-</div>
 
 <div class="header-section">
     <h1 class="judul">Finance Dashboard</h1>
@@ -101,7 +91,7 @@
 <div class="table-container">
     <div class="table-header">
         <h2 style="font-size: 18px;">Riwayat Transaksi</h2>
-        <button class="btn-tambah" >+ Tambah Data</button>
+        <button class="btn-tambah" id="btn-tambah" >+ Tambah Data</button>
     </div>
 
     <table>
@@ -138,10 +128,10 @@
                     <p  class = "pengeluaran"><?php echo $row['jenis'] ?></p>
                 </td>
                 <?php endif; ?>
-                <td style="color: var(--text-light);"><?= $row['deskripsi'] ?></td>
+                <td style="color: var(--text-light); width: 260px;"><?= $row['deskripsi'] ?></td>
                 <td>
-                    <a href="proses/editAksi.php?id=<?= $row['id']; ?>" class="btn-action btn-edit">Edit</a>
-                    <a href="proses/hapus.php?id=<?= $row['id'] ?>" class="btn-action btn-delete" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                    <a href="proses/editAksi.php?id=<?= $row['id']; ?>" class="btn-action btn-edit" id="edit">Edit</a>
+                    <a href="proses/hapus.php?id=<?= $row['id'] ?>" class="btn-action btn-delete" onclick="return confirm('Hapus data ini?')" id="hapus">Hapus</a>
                 </td>
             </tr>
             <?php endwhile; ?>
